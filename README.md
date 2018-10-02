@@ -20,7 +20,7 @@ Required:
                       
                       Enter the number of people and the number of transaction:
                       ThankYou!
-                      In the next 4 lines please enter the index of the person who paid the amount followed by the index of the                       person who owe it:
+                      In the next 4 lines please enter the index of the person who paid the amount followed by the index of the person who owe it:
                       2 pays amount 4 to 1
                       0 pays amount 2 to 3
                       0 pays amount 1 to 1
