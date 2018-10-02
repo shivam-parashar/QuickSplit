@@ -8,14 +8,12 @@ Required:
 
   
   
-  Sample Test case :  4 4
+  Sample Test case :  
   
+                      4 4
                       0 1 10
-                      
                       1 2 5
-                      
                       2 3 2
-                      
                       2 0 7
 
   Output:
