@@ -1,40 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int main()
 {
     int i, n, m, u, v, w, mini, x, maxi, y;
     cout<<"Enter the number of people and the number of transaction"<<endl;
-
     cin >> n >> m;
-    int balance[n+1];
+    int debt[n+1];
     for(i=0; i<=n; i++) 
     {
-        balance[i]=0;
+        debt[i]=0;
     }
-
-    cout<<"In the next "<<m<<" lines " <<" please enter the index of the person who paid the amount "<<endl;
-    cout<<"followed by the index of the person who owe it"<<endl;
+    cout<<"ThankYou!"<<endl;
+    cout<<"In the next "<<m<<" lines " <<"please enter the index of the person who paid the amount followed by the index of the person who owe it"<<endl;
 
 
     for(i=0; i<m; i++) 
     {
-        cin >> u >> v >> w;
         //u has to pay v an amount w
-        balance[u] -= w;
-        balance[v] += w;
+        cin >> u >> v >> w;
+        debt[u] = debt[u] - w;
+        debt[v] = debt[v] + w;
     }
-
-
 
     multiset< pair<int, int > > S;
 
     for(i=0; i<n; i++)
     {
-        if(balance[i] != 0) S.insert(make_pair(balance[i], i));
+        if(debt[i] != 0) S.insert(make_pair(debt[i], i));
     } 
-    
-       
+           
     int TotalTransactions = 0;
 
     while(!S.empty()) 
@@ -67,9 +61,6 @@ int main()
         }
     }
     
-    cout <<"Total number of Transactions occurring are "<<TotalTransactions << endl;
-    
-    
+    cout <<"Total number of Transactions occurred are "<<TotalTransactions << endl;
+    return 0;
 }
-
-
