@@ -3,7 +3,11 @@ using namespace std;
 
 int main()
 {
-    int i, n, m, u, v, w, mini, x, maxi, y, up, TotalTransactions=0;
+    int i, n, m, u, v, w, mini, x, maxi, y, up, TotalTransactions=0, t1=1, t2=0, t3=0;
+    cout<<"\t \t \t ################# WELCOME TO SPLITBILLS ####################"<<endl;
+    cout<<endl;
+    
+    
     cout<<"Enter the number of people and the number of transaction"<<endl;
     cin >> n >> m;
     int debt[n+100];
@@ -12,17 +16,15 @@ int main()
 
     cout<<"ThankYou!"<<endl;
     cout<<"In the next "<<m<<" lines " <<"please enter the index of the person who paid the amount followed by the index of the person who owe it"<<endl;
-
-
+    
     for(i=0; i<m; i++) 
     {
-        //u has to pay v an amount w
+        //u paid an amount w to v 
         cin >> u >> v >> w;
         debt[u] = debt[u] + w;
         debt[v] = debt[v] - w;
     }
 
-    int t1=1,t2=0,t3=0;
     while(t1==1)
     {
         if(t3==1)
@@ -32,7 +34,7 @@ int main()
             cout<<"In the next "<<up<<" lines " <<"please enter the index of the person who paid the amount followed by the index of the person who owe it"<<endl;
             for(i=0; i<up; i++) 
             {
-                //u has to pay v an amount w
+                //u paid an amount w to v
                 cin >> u >> v >> w;
                 debt[u] = debt[u] + w;
                 debt[v] = debt[v] - w;
@@ -66,7 +68,7 @@ int main()
             
             TotalTransactions++; 
             // mini pays amount "amount" to maxi
-            cout<<x<<" have to pay amount $"<<amount<<" to "<<y<<endl;
+            cout<<x<<" should pay amount $"<<amount<<" to "<<y<<endl;
             mini = mini + amount;
             maxi = maxi - amount;
             
