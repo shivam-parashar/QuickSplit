@@ -26,3 +26,8 @@ Required:
                       0 pays amount 1 to 1
                       Total number of Transactions occurred are 3
 
+
+
+Added extra functionality for updating and adding extra transaction.
+You can add more trancasitons later after the calculation.
+
