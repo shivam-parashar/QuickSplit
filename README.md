@@ -21,6 +21,8 @@ Required:
 
   Output:
                       
+                                ################# WELCOME TO QUICK-SPLIT ####################
+
                       Enter the number of people and the number of transaction
                       ThankYou!
                       In the next 3 lines please enter the index of the person who paid the amount followed by the index of the person who owe it
@@ -39,7 +41,6 @@ Required:
 
                       Do you want to add more transaction ?,if yes then press 1 else press 0
                       Total number of Transactions occurred are 3
-
 
 
 
