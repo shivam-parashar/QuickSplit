@@ -66,7 +66,7 @@ int main()
             
             TotalTransactions++; 
             // mini pays amount "amount" to maxi
-            cout<<x<<" pays amount "<<amount<<" to "<<y<<endl;
+            cout<<x<<" have to pay amount $"<<amount<<" to "<<y<<endl;
             mini = mini + amount;
             maxi = maxi - amount;
             
@@ -99,6 +99,3 @@ int main()
     cout <<"Total number of Transactions occurred are "<<TotalTransactions << endl;   
     
 }
-
-
-
