@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     int i, n, m, u, v, w, mini, x, maxi, y, up, TotalTransactions=0, t1=1, t2=0, t3=0;
-    cout<<"\t \t \t ################# WELCOME TO SPLITBILLS ####################"<<endl;
+    cout<<"\t \t \t ################# WELCOME TO QUICK-SPLIT ####################"<<endl;
     cout<<endl;
     
     
