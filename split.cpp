@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
-    int i, n, m, u, v, w, mini, x, maxi, y,up;
+    int i, n, m, u, v, w, mini, x, maxi, y, up, TotalTransactions=0;
     cout<<"Enter the number of people and the number of transaction"<<endl;
     cin >> n >> m;
     int debt[n+100];
@@ -17,8 +18,8 @@ int main()
     {
         //u has to pay v an amount w
         cin >> u >> v >> w;
-        debt[u] = debt[u] - w;
-        debt[v] = debt[v] + w;
+        debt[u] = debt[u] + w;
+        debt[v] = debt[v] - w;
     }
 
     int t1=1,t2=0,t3=0;
@@ -26,16 +27,17 @@ int main()
     {
         if(t3==1)
         {
-            cout<<"Enter the number of transactions you want to add "<<endl;
+            cout<<"Enter the number of transactions you want to addon"<<endl;
             cin>>up; 
             cout<<"In the next "<<up<<" lines " <<"please enter the index of the person who paid the amount followed by the index of the person who owe it"<<endl;
             for(i=0; i<up; i++) 
             {
                 //u has to pay v an amount w
                 cin >> u >> v >> w;
-                debt[u] = debt[u] - w;
-                debt[v] = debt[v] + w;
+                debt[u] = debt[u] + w;
+                debt[v] = debt[v] - w;
             }
+
         }
 
         multiset< pair<int, int > > S;
@@ -45,8 +47,9 @@ int main()
             if(debt[i] != 0) S.insert(make_pair(debt[i], i));
         } 
                
-        int TotalTransactions = 0;
-
+        TotalTransactions = 0;
+        
+        cout<<endl;
         while(!S.empty()) 
         {
             pair<int, int > p1 = *S.begin(); 
@@ -58,7 +61,7 @@ int main()
             S.erase(prev(S.end()));
             maxi = p2.first;
             y = p2.second;
-
+            
             int amount = min(-mini, maxi);
             
             TotalTransactions++; 
@@ -74,13 +77,13 @@ int main()
             if(maxi) 
             {
                 S.insert(make_pair(maxi, y));
-            }
+            }        
         }
         
         t1=0;
+        cout<<endl;
         
-        cout<<"Do you want to add more transaction ?"<<endl;
-        cout<<"if yes then press 1 else press 0"<<endl;
+        cout<<"Do you want to add more transaction ?,if yes then press 1 else press 0"<<endl;
         cin>>t3;
 
         if(t3==1)
@@ -92,6 +95,10 @@ int main()
             break;
         }
     }
-    cout <<"Total number of Transactions occurred are "<<TotalTransactions << endl;
-    return 0;
+    
+    cout <<"Total number of Transactions occurred are "<<TotalTransactions << endl;   
+    
 }
+
+
+
